@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Shorts & Clips Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-icon">🎬</span>
+        <h2>ShortCut.ai</h2>
+      </div>
+      <nav class="nav-menu">
+        <a href="#input-card" class="active"><span class="icon">✂️</span> Clip Extractor</a>
+        <a href="#caption-config"><span class="icon">💬</span> Captions Config</a>
+        <a href="#clips-panel"><span class="icon">🎞️</span> Clips</a>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <div class="avatar">V</div>
+          <div class="user-info">
+            <h4>Video Editor</h4>
+            <p>Creator Mode</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="header">
+        <div class="header-title">
+          <h1>AI Shorts & Clips Creator</h1>
+          <p>Extract viral short-form clips and overlay dynamic, engaging captions automatically.</p>
+        </div>
+        <div class="header-actions">
+          <div class="status-badge live" id="engine-status">Checking backend…</div>
+        </div>
+      </header>
+
+      <div class="dashboard-grid">
+        <!-- Left: URL Input & Setup -->
+        <div class="left-setup-panel">
+          <section class="card input-card" id="input-card">
+            <h3>1. Paste Long-Form Video URL</h3>
+            <div class="form-group">
+              <input type="text" id="video-url" placeholder="Paste YouTube link here...">
+            </div>
+            <div id="notice" class="notice hidden" role="status"></div>
+            <div class="divider">or</div>
+            <div class="file-uploader" id="uploader" role="button" tabindex="0" title="File upload is not supported in v1">
+              <span class="upload-icon">📤</span>
+              <p>File upload not supported in v1 — paste a YouTube URL</p>
+              <span class="upload-lbl-sub">No file is uploaded; URL extraction only</span>
+            </div>
+            <button id="extract-btn" class="btn primary">Extract Viral Clips</button>
+          </section>
+
+          <!-- Dynamic Caption Controller (revealed later) -->
+          <section class="card caption-config-card" id="caption-config">
+            <h3>2. Customize Caption Styles</h3>
+            <div class="form-group">
+              <label for="caption-preset">Preset Theme</label>
+              <select id="caption-preset">
+                <option value="tiktok">TikTok Neon (Yellow/Pink)</option>
+                <option value="minimalist">Minimalist White/Shadow</option>
+                <option value="bold">Youtuber Bold (Black Outline)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="font-size">Font Size</label>
+              <input type="range" id="font-size" min="16" max="32" value="24">
+            </div>
+          </section>
+        </div>
+
+        <!-- Right: Mobile Screen Simulator & Clip Manager -->
+        <div class="right-simulator-panel">
+          <section class="card simulator-card">
+            <div class="mobile-device">
+              <div class="notch"></div>
+              <div class="screen-canvas" id="screen-canvas">
+                <!-- Video Simulator Overlay -->
+                <div class="video-overlay-info">
+                  <span class="user-handle" id="screen-handle">@creator</span>
+                  <p class="video-desc" id="screen-desc">Paste a YouTube URL and hit Extract to preview real moments.</p>
+                </div>
+                <!-- Subtitle Container -->
+                <div class="subtitle-bubble" id="subtitle-bubble">
+                  Captions appear here
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Bottom Panel: Extracted Clips List -->
+      <div id="clips-panel" class="clips-panel hidden">
+        <div class="clips-panel-head">
+          <h2 id="clips-heading">Top AI Extracted Moments</h2>
+          <button id="export-btn" class="btn small" type="button">Export moments JSON</button>
+        </div>
+        <div class="clips-grid" id="clips-grid">
+          <!-- JS dynamic Injection -->
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
