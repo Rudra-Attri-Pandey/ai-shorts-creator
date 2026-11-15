@@ -6,11 +6,11 @@
   --bg-card-hover: hsl(225, 20%, 18%);
   --text-main: hsl(210, 40%, 96%);
   --text-muted: hsl(215, 20%, 65%);
-  --accent: hsl(328, 86%, 53%);
-  --accent-glow: hsla(328, 86%, 53%, 0.15);
-  --accent-hover: hsl(328, 92%, 58%);
+  --accent: #E35000;
+  --accent-glow: rgba(227, 80, 0, 0.15);
+  --accent-hover: #FF5C03;
   --border: hsl(225, 15%, 22%);
-  --border-focus: hsl(328, 86%, 45%);
+  --border-focus: #BA4200;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -116,7 +116,7 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent), hsl(280, 80%, 50%));
+  background: linear-gradient(135deg, var(--accent), #8000E3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,9 +171,9 @@ body {
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 50px;
-  background-color: hsla(328, 86%, 53%, 0.1);
+  background-color: rgba(227, 80, 0, 0.10);
   color: var(--accent);
-  border: 1px solid hsla(328, 86%, 53%, 0.2);
+  border: 1px solid rgba(227, 80, 0, 0.20);
 }
 
 .status-badge::before {
@@ -320,8 +320,8 @@ input[type="range"] {
   position: relative;
   /* Local gradient backdrop — no external image dependency. */
   background:
-    radial-gradient(120% 60% at 50% 0%, hsla(328, 86%, 53%, 0.35), transparent 60%),
-    radial-gradient(100% 55% at 80% 100%, hsla(280, 80%, 50%, 0.30), transparent 60%),
+    radial-gradient(120% 60% at 50% 0%, rgba(227, 80, 0, 0.35), transparent 60%),
+    radial-gradient(100% 55% at 80% 100%, rgba(128, 0, 227, 0.30), transparent 60%),
     linear-gradient(180deg, hsl(225, 22%, 16%), hsl(225, 25%, 7%));
   display: flex;
   flex-direction: column;
@@ -562,3 +562,12 @@ input[type="range"] {
     padding: 1.5rem;
   }
 }
+
+/* Accent 3 from the supplied palette (highlight / score chips). */
+.clip-score {
+  color: #00E3DA;
+  background: rgba(0, 227, 218, 0.15);
+}
+
+/* Readability: dark ink on the bright accent fill. */
+.btn.primary { color: #150700; }
