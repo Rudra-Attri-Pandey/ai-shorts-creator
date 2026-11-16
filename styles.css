@@ -571,3 +571,7 @@ input[type="range"] {
 
 /* Readability: dark ink on the bright accent fill. */
 .btn.primary { color: #150700; }
+
+/* Palette role 4/4 - lime highlight (was unused) */
+.status-badge { border-color: rgba(206, 227, 0, 0.55); }
+.clip-score { box-shadow: inset 0 0 0 1px rgba(206, 227, 0, 0.35); }
