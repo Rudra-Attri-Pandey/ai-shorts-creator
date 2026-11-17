@@ -26,7 +26,7 @@
 }
 
 body {
-  background-color: var(--bg-darker);
+  background: linear-gradient(rgba(7,9,19,0.72), rgba(7,9,19,0.72)), linear-gradient(135deg, #E35000 0%, #8000E3 33%, #00E3DA 66%, #CEE300 100%); background-attachment: fixed;
   color: var(--text-main);
   font-family: var(--font-sans);
   line-height: 1.6;
